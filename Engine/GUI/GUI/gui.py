@@ -31,18 +31,18 @@ chessBoard.setFromFen("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1"
 chessBoard.initialize()
 
 pieceImages = {
-    (Color.WHITE, PieceType.PAWN): pygame.image.load("Piece Images/w_p.png"),
-    (Color.WHITE, PieceType.KNIGHT): pygame.image.load("Piece Images/w_n.png"),
-    (Color.WHITE, PieceType.BISHOP): pygame.image.load("Piece Images/w_b.png"),
-    (Color.WHITE, PieceType.ROOK): pygame.image.load("Piece Images/w_r.png"),
-    (Color.WHITE, PieceType.QUEEN): pygame.image.load("Piece Images/w_q.png"),
-    (Color.WHITE, PieceType.KING): pygame.image.load("Piece Images/w_k.png"),
-    (Color.BLACK, PieceType.PAWN): pygame.image.load("Piece Images/b_p.png"),
-    (Color.BLACK, PieceType.KNIGHT): pygame.image.load("Piece Images/b_n.png"),
-    (Color.BLACK, PieceType.BISHOP): pygame.image.load("Piece Images/b_b.png"),
-    (Color.BLACK, PieceType.ROOK): pygame.image.load("Piece Images/b_r.png"),
-    (Color.BLACK, PieceType.QUEEN): pygame.image.load("Piece Images/b_q.png"),
-    (Color.BLACK, PieceType.KING): pygame.image.load("Piece Images/b_k.png"),
+    (Color.WHITE, PieceType.PAWN): pygame.image.load("../Piece Images/w_p.png"),
+    (Color.WHITE, PieceType.KNIGHT): pygame.image.load("../Piece Images/w_n.png"),
+    (Color.WHITE, PieceType.BISHOP): pygame.image.load("../Piece Images/w_b.png"),
+    (Color.WHITE, PieceType.ROOK): pygame.image.load("../Piece Images/w_r.png"),
+    (Color.WHITE, PieceType.QUEEN): pygame.image.load("../Piece Images/w_q.png"),
+    (Color.WHITE, PieceType.KING): pygame.image.load("../Piece Images/w_k.png"),
+    (Color.BLACK, PieceType.PAWN): pygame.image.load("../Piece Images/b_p.png"),
+    (Color.BLACK, PieceType.KNIGHT): pygame.image.load("../Piece Images/b_n.png"),
+    (Color.BLACK, PieceType.BISHOP): pygame.image.load("../Piece Images/b_b.png"),
+    (Color.BLACK, PieceType.ROOK): pygame.image.load("../Piece Images/b_r.png"),
+    (Color.BLACK, PieceType.QUEEN): pygame.image.load("../Piece Images/b_q.png"),
+    (Color.BLACK, PieceType.KING): pygame.image.load("../Piece Images/b_k.png"),
 }
 
 def drawBoard(flipped=False):
@@ -67,7 +67,7 @@ def drawBoard(flipped=False):
     pygame.display.flip()
 
 def makeEngineMove(color):
-    result = Evaluation.search(chessBoard, 6, color == Color.WHITE)
+    result = Evaluation.search(chessBoard, 5, color == Color.WHITE)
     chessBoard.makeAMove(result.bestMove)
     return True
 
